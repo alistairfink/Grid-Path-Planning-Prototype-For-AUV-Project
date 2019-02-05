@@ -1,0 +1,11 @@
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\bin\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.deps.json
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\bin\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.runtimeconfig.json
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\bin\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.runtimeconfig.dev.json
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\bin\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.dll
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\bin\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.pdb
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.csproj.CoreCompileInputs.cache
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.AssemblyInfoInputs.cache
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.AssemblyInfo.cs
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.dll
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.pdb
+E:\AppDev\Github\Grid-Path-Planning-Prototype-For-AUV-Project\Grid-Path-Planning-Prototype-For-AUV-Project\obj\Debug\netcoreapp2.1\Grid-Path-Planning-Prototype-For-AUV-Project.csprojAssemblyReference.cache
