@@ -45,17 +45,27 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
             nodes["Node15"].Connected = new List<Node> { nodes["Node11"], nodes["Node14"], nodes["Node16"] };
             nodes["Node16"].Connected = new List<Node> { nodes["Node12"], nodes["Node15"] };
 
-            var invalidNodes = new List<Node> { nodes["Node5"], nodes["Node12"], nodes["Node14"] };
-            // var startingNode = args[0];
-            var startNode = nodes["Node8"];//nodes[startingNode];
+            var startingNode = args[0];
+            var startNode = nodes[startingNode];
+            Console.WriteLine($"Starting Node: {startNode.Name}");
+
+
+            Console.WriteLine("\nInvalid Nodes: ");
+            var invalidNodes = new List<Node>();
+            for (int i = 1; i < args.Length; i++)
+            {
+                var node = nodes[args[i]];
+                invalidNodes.Add(node);
+                Console.WriteLine(node.Name);
+            }
+            
             var totalNodes = 16;
             var path = VisitAllNodes(startNode, invalidNodes, totalNodes);
-            Console.WriteLine("Path: ");
+            Console.WriteLine("\n\nPath: ");
             for (int i = path.Count - 1; i >= 0; i--)
             {
                 Console.WriteLine(path[i].Name);
             }
-            Console.ReadKey();
         }
 
         private static IList<Node> VisitAllNodes(Node startNode, List<Node> invalid, int total)
@@ -63,32 +73,32 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
             var toVisit = total - invalid.Count;
             var path = new Stack<Node>();
             path.Push(startNode);
-            MakePath(path, invalid, toVisit);
+            var invalidCount = 0;
+            MakePath(path, invalid, toVisit, ref invalidCount);
             return path.ToArray();
         }
 
-        private static void MakePath(Stack<Node> nodesVisit, List<Node> invalid, int total)
+        private static void MakePath(Stack<Node> nodesVisit, List<Node> invalid, int total, ref int invalidCount)
         {
-            var currNode = nodesVisit.Peek();
-            var maybeNodes = new List<Node>();
-            var validNodes = new List<Node>();
-            var invalidCount = 0;
-            foreach (var valid in currNode.Connected)
+            if (nodesVisit.Count - invalidCount >= total)
             {
-                if (!nodesVisit.Contains(valid))
+                return;
+            }
+            var currNode = nodesVisit.Peek();
+            var validNodes = new List<Node>();
+            var invalidNodes = new List<Node>();
+            foreach (var node in currNode.Connected)
+            {
+                if (!nodesVisit.Contains(node))
                 {
-                    if (!invalid.Contains(valid))
+                    if (invalid.Contains(node))
                     {
-                        validNodes.Add(valid);
+                        invalidNodes.Add(node);
                     }
-                    else if (invalid.Contains(valid))
+                    else
                     {
-                        maybeNodes.Add(valid);
+                        validNodes.Add(node);
                     }
-                }
-                else if (nodesVisit.Contains(valid) && invalid.Contains(valid))
-                {
-                    invalidCount++;
                 }
             }
 
@@ -97,7 +107,7 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
                 foreach (var node in validNodes)
                 {
                     nodesVisit.Push(node);
-                    MakePath(nodesVisit, invalid, total);
+                    MakePath(nodesVisit, invalid, total, ref invalidCount);
                     if (nodesVisit.Count - invalidCount >= total)
                     {
                         return;
@@ -107,10 +117,11 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
             }
             else
             {
-                foreach (var node in maybeNodes)
+                foreach (var node in invalidNodes)
                 {
                     nodesVisit.Push(node);
-                    MakePath(nodesVisit, invalid, total);
+                    invalidCount++;
+                    MakePath(nodesVisit, invalid, total, ref invalidCount);
                     if (nodesVisit.Count - invalidCount >= total)
                     {
                         return;
