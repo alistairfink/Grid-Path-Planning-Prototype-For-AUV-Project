@@ -134,8 +134,6 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
                     total--;
                 }
             }
-
-
         }
     }
 
