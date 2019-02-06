@@ -73,42 +73,34 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
             var toVisit = total - invalid.Count;
             var path = new Stack<Node>();
             path.Push(startNode);
-            var invalidCount = 0;
-            MakePath(path, invalid, toVisit, ref invalidCount);
+            MakePath(path, invalid, ref toVisit);
             return path.ToArray();
         }
 
-        private static void MakePath(Stack<Node> nodesVisit, List<Node> invalid, int total, ref int invalidCount)
+        private static void MakePath(Stack<Node> nodesVisit, List<Node> invalid, ref int total)
         {
-            if (nodesVisit.Count - invalidCount >= total)
+            if (nodesVisit.Count >= total)
             {
                 return;
             }
             var currNode = nodesVisit.Peek();
             var validNodes = new List<Node>();
-            var invalidNodes = new List<Node>();
             foreach (var node in currNode.Connected)
             {
-                if (!nodesVisit.Contains(node))
+                if (!nodesVisit.Contains(node) && !invalid.Contains(node))
                 {
-                    if (invalid.Contains(node))
-                    {
-                        invalidNodes.Add(node);
-                    }
-                    else
-                    {
-                        validNodes.Add(node);
-                    }
+                    validNodes.Add(node);
                 }
             }
 
             if (validNodes.Count > 0)
             {
-                foreach (var node in validNodes)
+                for (int i = 0; i < validNodes.Count; i++)
                 {
+                    var node = validNodes[i];
                     nodesVisit.Push(node);
-                    MakePath(nodesVisit, invalid, total, ref invalidCount);
-                    if (nodesVisit.Count - invalidCount >= total)
+                    MakePath(nodesVisit, invalid, ref total);
+                    if (nodesVisit.Count >= total)
                     {
                         return;
                     }
@@ -117,18 +109,33 @@ namespace Grid_Path_Planning_Prototype_For_AUV_Project
             }
             else
             {
-                foreach (var node in invalidNodes)
+                var node = nodesVisit.Pop();
+                var prev = nodesVisit.Peek();
+                nodesVisit.Push(node);
+                var options = 0;
+                foreach (var n in prev.Connected)
                 {
-                    nodesVisit.Push(node);
-                    invalidCount++;
-                    MakePath(nodesVisit, invalid, total, ref invalidCount);
-                    if (nodesVisit.Count - invalidCount >= total)
+                    if (!nodesVisit.Contains(n) && !invalid.Contains(n))
                     {
-                        return;
+                        options++;
                     }
+                }
+
+                if (options > 0)
+                {
+                    total++;
+                    nodesVisit.Push(prev);
+                    MakePath(nodesVisit, invalid, ref total);
+                    if (nodesVisit.Count >= total)
+                        {
+                            return;
+                        }
                     nodesVisit.Pop();
+                    total--;
                 }
             }
+
+
         }
     }
 

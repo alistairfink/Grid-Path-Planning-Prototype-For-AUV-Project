@@ -681,23 +681,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alistair\\.nuget\\packages\\": {},
+    "C:\\Users\\Alistair Fink\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\AppDev\\Github\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project.csproj",
+      "projectUniqueName": "C:\\Users\\Alistair Fink\\Desktop\\Source\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project.csproj",
       "projectName": "Grid-Path-Planning-Prototype-For-AUV-Project",
-      "projectPath": "E:\\AppDev\\Github\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project.csproj",
-      "packagesPath": "C:\\Users\\Alistair\\.nuget\\packages\\",
-      "outputPath": "E:\\AppDev\\Github\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\obj\\",
+      "projectPath": "C:\\Users\\Alistair Fink\\Desktop\\Source\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project.csproj",
+      "packagesPath": "C:\\Users\\Alistair Fink\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alistair Fink\\Desktop\\Source\\Grid-Path-Planning-Prototype-For-AUV-Project\\Grid-Path-Planning-Prototype-For-AUV-Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "G:\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alistair Fink\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

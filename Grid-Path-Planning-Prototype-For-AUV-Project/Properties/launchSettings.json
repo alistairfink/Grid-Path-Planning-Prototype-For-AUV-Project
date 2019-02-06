@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Grid-Path-Planning-Prototype-For-AUV-Project": {
+      "commandName": "Project",
+      "commandLineArgs": "Node2 Node9 Node15"
+    }
+  }
+}
